@@ -76,7 +76,7 @@ class Killfeed(commands.Cog):
     @tasks.loop(hours=12)
     async def RestartServer(self):
         restartchannel = self.bot.get_channel(Config.restartchannel)
-        pingrole = 1088546845023797278
+        pingrole = Config.restartrole
         amount = 50 #Increase this if you get more than 50 at a time
         await restartchannel.purge(limit=amount)
         await restartchannel.send(f"<@&{pingrole}> Restarting the server in 5 minutes.")
